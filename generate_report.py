@@ -30,7 +30,6 @@ def generate_expiry_report():
                     csv_writer.writerow(row)
                     print("Expired Medicines report saved as expired_medicines_report.csv")
         
-
     connect.close()
 
 def generate_low_quantity_report():
@@ -60,5 +59,31 @@ def generate_low_quantity_report():
                     print("Expired Medicines report saved as low_quantity_report.csv")
 
     connect.close()
+
+def generate_all_medicines_report():
+    print("Generating report.....")
+    cursor.execute("SELECT * FROM medicines")
+    rows = cursor.fetchall()
+
+    print("Medicine ID | Name    | Batch Number | Quantity | Expiry Date")
+    print ("--------------------------------------------")
+    for row in rows: 
+        print(f"{row[0]:11}  | {row[1]:11}  | {row[2]:12}  |{row[3]:8}  | {row[4]}")
+
+    download_option = input("Do you want to download the report?(Y/N)")
+    if download_option == 'N':
+            connect.close()
+    else: 
+        with open("medicines.csv", "w", newline = "")as csvfile:
+            csv_writer = csv.writer(csvfile)
+            csv_writer.writerow(["Medicine ID", "Name", "Batch Number", "Quantity", "Expiry Date"])
+            for row in rows:
+                csv_writer.writerow(row)
+        print("Expired Medicines report saved as medicines.csv")
+
+    connect.close()
+
+generate_all_medicines_report()
+
 
 

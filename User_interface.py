@@ -19,7 +19,7 @@ def display_menu():
 
 
 def main():
-    # i want to implement a loop here that is always checking for expiry alerts. 
+    # i want to implement a loop here to always checking for expiry alerts. 
     display_menu()
         
     while True:
