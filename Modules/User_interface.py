@@ -26,7 +26,7 @@ def main():
         choice = display_menu()
         if choice == '1':
             try:
-                from add_medicine import add_medicine
+                from Modules.add_medicine import add_medicine
                 add_medicine()
             except ValueError:
                 print("Invalid input. Please enter valid details")
@@ -34,7 +34,7 @@ def main():
                 print(f"An error occurred: {e}")
         elif choice == '2':
             try: 
-                from view_medicine import view_medicines
+                from Modules.view_medicine import view_medicines
                 view_medicines()
             except ValueError:
                 print("Invalid input. Please enter valid details")
@@ -42,7 +42,7 @@ def main():
                 print(f"An error occurred: {e}")
         elif choice == '3':
             try:
-                from expiring_medicines import view_expiring_medicine
+                from Modules.expiring_medicines import view_expiring_medicine
                 view_expiring_medicine()
             except ValueError:
                  print("Invalid input. Please enter valid details")
@@ -50,7 +50,7 @@ def main():
                 print(f"An error occurred: {e}")
         elif choice == '4':
             try: 
-                from update_expiry_date import update_expiry_date
+                from Modules.update_expiry_date import update_expiry_date
                 update_expiry_date()
             except ValueError:
                  print("Invalid input. Please enter valid details")
@@ -58,7 +58,7 @@ def main():
                 print(f"An error occurred: {e}")
         elif choice == '5':
             try: 
-                from update_quantity import update_medicine_quantity
+                from Modules.update_quantity import update_medicine_quantity
                 update_medicine_quantity()
             except ValueError:
                  print("Invalid input. Please enter valid details")
@@ -66,7 +66,7 @@ def main():
                 print(f"An error occurred: {e}")
         elif choice == '6':
             try:
-                from delete import delete_medicine
+                from Modules.delete import delete_medicine
                 delete_medicine()
             except ValueError:
                  print("Invalid input. Please enter valid details")
@@ -74,7 +74,7 @@ def main():
                 print(f"An error occurred: {e}")
         elif choice == '7':
             try:
-                from search_medicine import search
+                from Modules.search_medicine import search
                 search()
             except ValueError:
                  print("Invalid input. Please enter valid details")
@@ -82,7 +82,7 @@ def main():
                 print(f"An error occurred: {e}")
         elif choice == '8':
             try:
-                from check_expired_medicines import check_expired_medicines
+                from Modules.check_expired_medicines import check_expired_medicines
                 check_expired_medicines()
                 print("Exiting the Pharmacy Inventory Management System.")
             except ValueError:
@@ -91,7 +91,7 @@ def main():
                 print(f"An error occurred: {e}")
         elif choice == '9':
             try:
-                from check_expired_medicines import check_expired_medicines
+                from Modules.check_expired_medicines import check_expired_medicines
                 check_expired_medicines()
                 print("Exiting the Pharmacy Inventory Management System.")
             except ValueError:
