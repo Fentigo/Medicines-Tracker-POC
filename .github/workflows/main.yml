@@ -25,6 +25,7 @@ jobs:
         run: python -m unittest discover -s tests -p 'test_*.py'
         
       - name: Lint Code
+        working-directory: ./Medicines-Tracker-POC/
         run: pylint Modules/
 
         
