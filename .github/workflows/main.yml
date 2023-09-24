@@ -22,4 +22,4 @@ jobs:
         run: python -m unittest discover -s tests
       - name: Lint Code
         run: pylint Modules/
-        run: echo "This workflow was manually triggered."
+
