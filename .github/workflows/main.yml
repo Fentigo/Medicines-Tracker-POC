@@ -15,11 +15,21 @@ jobs:
         with:
           python-version: 3.x
 
+      - name: Install system-level dependencies for pygame
+        run:
+          sudo apt-get update
+          sudo apt-get install -y libsdl2-dev
+          
       - name: Install Dependencies
         run: pip install -r requirements.txt
 
+      
+
       - name: Run Tests
         run: python -m unittest discover -s tests
+        
       - name: Lint Code
         run: pylint Modules/
+
+        
 
