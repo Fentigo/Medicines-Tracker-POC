@@ -11,3 +11,5 @@ def view_medicines():
         print(f"{row[0]:11}  | {row[1]:11}  | {row[2]:12}  |{row[3]:8}  | {row[4]}")
     connect.commit()
     connect.close
+
+view_medicines()
