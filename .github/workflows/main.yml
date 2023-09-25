@@ -5,8 +5,10 @@ on:
   push:
     branches:
       - main
+      - new-feature-updates
     pull_request:
       - main
+      - new-feature-updates
   
 
 jobs:
