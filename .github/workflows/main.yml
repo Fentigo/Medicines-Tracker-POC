@@ -1,32 +1,24 @@
-name: CI/CD pipeline
+
+name: Manual Workflow Trigger
+
 on:
-  workflow_dispatch
+  push:
+    branches:
+      - main
+    pull_request:
+      - main
+  
 
 jobs:
-  build:
+  simple_job:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout Code
         uses: actions/checkout@v2
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.x
-          
-      - name: Install Dependencies
-        run: pip install -r requirements.txt
-
-      
-
-      - name: Run Tests
-        run: python -m unittest discover -s /Tests  t-Tests
-        
-        
-      - name: Lint Code
-
-        run: pylint Modules/
+      - name: Print Message
+        run: echo "This workflow was manually triggered."
 
         
 
